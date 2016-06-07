@@ -177,6 +177,11 @@ module Mail
       if !Encodings.defined?(encoding)
         raise UnknownEncodingType, "Don't know how to decode #{encoding}, please call #encoded and decode it yourself."
       else
+        # puts"============"
+        # puts encoding
+        # # puts raw_source
+        # puts"============"
+
         Encodings.get_encoding(encoding).decode(raw_source)
       end
     end

@@ -123,6 +123,11 @@ module Mail
 
       @mark_for_delete = false
 
+
+      # puts"-------------"
+      # puts args
+      # puts"-------------"
+
       if args.flatten.first.respond_to?(:each_pair)
         init_with_hash(args.flatten.first)
       else
@@ -1995,6 +2000,10 @@ module Mail
     # on the "gap line"
     def parse_message
       header_part, body_part = raw_source.lstrip.split(HEADER_SEPARATOR, 2)
+
+
+      puts"+++++++++++++++++++++++++"
+
       self.header = header_part
       self.body   = body_part
     end
